@@ -7,7 +7,7 @@ public class Vegpizza_Page {
     public By noThanks = By.xpath("//span[text()='NO THANKS']");
     public By productprices = By.xpath("//span//ancestor::div[@class='crt-cnt']//following-sibling::div[@class='crt-cnt-qty-prc']//descendant::span[@class='rupee']");
     public By subtotal = By.xpath("//span[@data-label='total-minicart']");
-
+    public By subtotal1 = By.xpath("//span[@data-label='total-minicart']");
     public By addCartProduct(String productName) {
         By locator = By.xpath("(//div[contains(@data-label,'" + productName + "')]//button)[2]");
         return locator;
