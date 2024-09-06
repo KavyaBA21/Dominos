@@ -5,6 +5,8 @@ import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -37,10 +39,22 @@ public class Base_Class {
     }
 
     public static void log(String text) {
+
         System.out.println(text);
     }
 
     public static void quit() {
+
         driver.quit();
     }
+
+   public static void launchBrowser(String browser) {
+       if (browser.equalsIgnoreCase("chrome")) {
+           driver = new ChromeDriver();
+       } else if (browser.equalsIgnoreCase("firefox")) {
+           driver = new FirefoxDriver();
+       } else {
+           System.out.println("No Browser");
+       }
+   }
 }
